@@ -4,7 +4,7 @@
 #
 Name     : perl-File-KeePass
 Version  : 2.03
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/R/RH/RHANDOM/File-KeePass-2.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RH/RHANDOM/File-KeePass-2.03.tar.gz
 Summary  : Interface to KeePass V1 and V2 database files
@@ -24,7 +24,7 @@ use Data::Dumper qw(Dumper);
 %package dev
 Summary: dev components for the perl-File-KeePass package.
 Group: Development
-Provides: perl-File-KeePass-devel
+Provides: perl-File-KeePass-devel = %{version}-%{release}
 
 %description dev
 dev components for the perl-File-KeePass package.
@@ -56,9 +56,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -67,7 +67,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/File/KeePass.pm
+/usr/lib/perl5/vendor_perl/5.26.1/File/KeePass.pm
 
 %files dev
 %defattr(-,root,root,-)
