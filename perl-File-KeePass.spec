@@ -4,7 +4,7 @@
 #
 Name     : perl-File-KeePass
 Version  : 2.03
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/R/RH/RHANDOM/File-KeePass-2.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RH/RHANDOM/File-KeePass-2.03.tar.gz
 Summary  : Interface to KeePass V1 and V2 database files
@@ -86,4 +86,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/File/KeePass.pm
+/usr/lib/perl5/vendor_perl/5.30.2/File/KeePass.pm
