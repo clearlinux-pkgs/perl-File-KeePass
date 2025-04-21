@@ -7,7 +7,7 @@
 #
 Name     : perl-File-KeePass
 Version  : 2.03
-Release  : 30
+Release  : 31
 URL      : https://cpan.metacpan.org/authors/id/R/RH/RHANDOM/File-KeePass-2.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RH/RHANDOM/File-KeePass-2.03.tar.gz
 Summary  : Interface to KeePass V1 and V2 database files
